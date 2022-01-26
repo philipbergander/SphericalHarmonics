@@ -1,8 +1,11 @@
-(@isdefined(SphericalHarmonics_Mod)) ? nothing : include("M:\\Vågutbredning\\Spherical Harmonics\\SphericalHarmonics.jl")
+filePath = @__DIR__
+(@isdefined(SphericalHarmonics_Mod)) ? nothing : include(string(filePath,"\\SphericalHarmonics.jl"))
 using .SphericalHarmonics_Mod
 using Plots
 
-function main()
+savepath = string(filePath,"\\anim.gif")
+
+function main(savepath)
 
     pyplot(size=(1080,1080))
 
@@ -18,11 +21,11 @@ function main()
 
     end
 
-    gif(anim,"C:\\Users\\phiber\\Downloads\\anim1.gif",fps=2)
+    gif(anim,savepath,fps=2)
     
     return
 
 
 end
 
-main()
+main(savepath)
