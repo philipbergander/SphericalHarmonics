@@ -12,7 +12,7 @@ function main(savepath)
     pyplot(size=(1080,1080))
 
     # l-values to be plotted
-    lmax = 2
+    lmax = 20 
     sz = sum((lmax:lmax).+1) #Number of m-values
 
     N = 500; #Meshgrid in plot is NxN
